@@ -103,11 +103,14 @@ equivalents. NTLMv2 is the most and possibly the only secure authentication of t
 .br
 \fBGSS:\fP GSS option activates the kerberos authentication. You need a cached credential (see kinit doc): per default
 the cache file is in /tmp/krb5cc_<uid>, you can override this using the environment variable KRB5CCNAME.
-In example KRB5CCNAME=FILE:/tmp/my_krb5cc_for_LDS.IT
+In example KRB5CCNAME=FILE:/tmp/my_krb5cc_for_LDS.IT.
+.br
 If GSS is specified, at each connection sends the auth token without to ask the proxy if auth is needed.
-If GSS credentials are not available will fallback to the NTLM discovery procedure
-If no Auth type is specified and there is a GSS cached credential available and the server asks for a 
-'Negotiate' auth, then a GSS token is used, else the NTLM auth is used
+.br
+If GSS credentials are not available will fallback to the NTLM discovery procedure.
+.br
+If no Auth type is specified and there is a GSS cached credential available and the server asks for a 'Negotiate'
+auth, then a GSS token is used, else the NTLM auth is used.
 
 
 .ne 4
